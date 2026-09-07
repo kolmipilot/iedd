@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=31;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={1868.953,5.8289194,5763.7368};
-		dir[]={-0.59770125,-0.14631495,0.78828251};
-		up[]={-0.088406727,0.98923236,0.11659566};
-		aside[]={0.79685515,7.7110599e-08,0.60420448};
+		pos[]={1878.7361,8.1443329,5795.269};
+		dir[]={-0.34348527,-0.49490017,-0.7982285};
+		up[]={-0.1956158,0.86894035,-0.4545936};
+		aside[]={-0.91859668,-6.9680391e-07,0.39527878};
 	};
 };
 binarizationWanted=0;
@@ -212,7 +212,8 @@ dlcs[]=
 {
 	"Mark",
 	"Expansion",
-	"Enoch"
+	"Enoch",
+	"ORANGE"
 };
 randomSeed=3982459;
 class ScenarioData
@@ -281,7 +282,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
 			dataType="Group";
@@ -633,17 +634,15 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1868.9291,5.567337,5764.1416};
+				position[]={1868.929,5.5675173,5764.1421};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				init=";private _ieddTripWireMarker = 'IEDD_TRIPWIRE_END_POSITION'; [this, [1855.32,5767.14,5.47703]] call iedd_triggers_fnc_SpawnTripWireWire;";
 			};
 			id=29;
 			type="iedd_triggers_TripWirePole";
-			atlOffset=-0.00018119812;
 		};
 		class Item8
 		{
@@ -660,6 +659,91 @@ class Mission
 			id=30;
 			type="iedd_triggers_TripWirePoleEnd";
 			atlOffset=-0.00012016296;
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1876.077,5.6877241,5792.041};
+				angles[]={0.0075049158,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=31;
+			type="iedd_ied_Cinder";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_ied_dud";
+					expression="_this setVariable ['iedd_ied_dud',_value];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="iedd_ied_trigerType";
+					expression="_this setVariable ['iedd_ied_trigerType',_value];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="iedd_ied_fake";
+					expression="_this setVariable ['iedd_ied_fake',_value];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="iedd_ied_bury";
+					expression="if (is3DEN) then {                [_this, _value] call iedd_ied_fnc_buryIED3DEN;            } else {                _this setVariable ['iedd_ied_bury', [parseNumber(_value toFixed 2), vectorDir _this, vectorUp _this]];            }";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="iedd_ied_size";
+					expression="_this setVariable ['iedd_ied_size',_value];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=5;
+			};
 		};
 	};
 	class Connections

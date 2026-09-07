@@ -19,22 +19,23 @@ params ["_object"];
 if (!is3DEN || {isNull _object}) exitWith {};
 
 private _pole2 = objNull;
-private _ieeds = [];
+private _connectionData = [];
 {
-    private _connectedObject = _x select 1;
+    _x params ["_connectionType", "_connectedObject"];
+    if (_connectionType != "Sync" || {isNull _connectedObject}) then {
+        continue;
+    };
+
     if (typeOf _connectedObject == QGVAR(TripWirePoleEnd)) then {
         _pole2 = _connectedObject;
+        _connectionData pushBack ["pole", getPos _connectedObject];
     };
     if ((typeOf _connectedObject) in IEDD_CLASSES || (typeOf _connectedObject) in IEDD_FAKE_CLASSES) then {
-        _ieeds pushBack [typeOf _connectedObject, getPos _connectedObject];
+        _connectionData pushBack ["ied", typeOf _connectedObject, getPos _connectedObject];
     };
 } forEach get3DENConnections _object;
 
-private _init = "";//_object get3DENAttribute "init" param [0, ""];
-if (!isNull _pole2) then {
-    _init = _init + format [";[this, %1, %2] call iedd_triggers_fnc_SpawnTripWireHandle;", str getPos _pole2, str _ieeds];
-};
-_object set3DENAttribute ["init", _init];
+_object set3DENAttribute ["iedd_triggers_connections", _connectionData];
 
 private _oldWire = _object getVariable ["IEDD_3denWire", -1];
 if (_oldWire >= 0) then {

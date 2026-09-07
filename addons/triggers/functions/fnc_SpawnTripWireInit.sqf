@@ -16,10 +16,10 @@
  */
 params ["_obj"];
 
-TRACE_1("fnc_SpawnTripWireIgniter",_this);
+TRACE_2("fnc_SpawnTripWireIgniterEdenOrMission",_this,is3DEN);
 
 if (isNull _obj) exitWith {};
-if (!is3DEN) exitWith {};
+if (!is3DEN) exitWith {_obj call FUNC(SpawnTripWireHandle)};
 
 private _igniter = createSimpleObject ["Land_BatteryPack_01_battery_black_F", [0, 0, 0], true];
 _igniter setPosASL [getPosASL _obj select 0, getPosASL _obj select 1, (getPosASL _obj select 2) + 0.1];

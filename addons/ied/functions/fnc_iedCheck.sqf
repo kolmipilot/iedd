@@ -44,29 +44,32 @@ if (GVAR(bombs) isNotEqualTo []) then {
                 };
             };
         };
-        if (GVAR(vehCheck)) then {
-            private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
-            if (_nearVehicles isNotEqualTo []) then {
-                private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
-                if (_index > -1) then {
-                    [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
-                    _objectsToRemove pushBack _object;
-                    continue;
-                };
-            };
-        };
-        if (GVAR(plrCheck)) then {
-            private _nearPlrs = _players select {;;(_object distance _x) < _distance};
-            if (_nearPlrs isNotEqualTo []) then {
-                {
-                    _nearPlr = _x;
-                    if (speed _nearPlr > 8) then
-                    {
+        private _trigerType = _object getVariable [QGVAR(trigerType), GVAR(defaultTriggerType)];
+        TRACE_2("Trigger type",_object,_trigerType);
+        if (_trigerType in [0, 2]) then {
+            if (GVAR(vehCheck)) then {
+                private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
+                if (_nearVehicles isNotEqualTo []) then {
+                    private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
+                    if (_index > -1) then {
                         [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
                         _objectsToRemove pushBack _object;
                         continue;
                     };
-                } forEach _nearPlrs;
+                };
+            };
+            if (GVAR(plrCheck)) then {
+                private _nearPlrs = _players select {(_object distance _x) < _distance};
+                if (_nearPlrs isNotEqualTo []) then {
+                    {
+                        private _nearPlr = _x;
+                        if (speed _nearPlr > 8) then {
+                            [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+                            _objectsToRemove pushBack _object;
+                            continue;
+                        };
+                    } forEach _nearPlrs;
+                };
             };
         };
     } forEach GVAR(bombs);

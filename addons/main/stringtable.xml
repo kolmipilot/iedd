@@ -41,6 +41,10 @@
             <Original>Training IEDs</Original>
             <English>Training IEDs</English>
         </Key>
+        <Key ID="STR_iedd_main_Category_Triggers">
+            <Original>Triggers</Original>
+            <English>Triggers</English>
+        </Key>
         <Key ID="STR_iedd_main_Options">
             <English>IEDD Notebook Options</English>
             <Czech>IEDD Notebook Nastavení</Czech>

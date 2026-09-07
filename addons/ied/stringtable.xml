@@ -590,6 +590,14 @@
                 <Original>Bucket IED - Lid activation (EODs)</Original>
                 <English>Bucket IED - Lid activation (EODs)</English>
             </Key>
+            <Key ID="STR_iedd_ied_DefaultTriggerType">
+                <Original>Default Trigger Type</Original>
+                <English>Default Trigger Type</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTriggerType_Description">
+                <Original>Set IED trigger type.</Original>
+                <English>Set IED trigger type.</English>
+            </Key>
             <Key ID="STR_iedd_ied_Dir">
                 <Original>Random direction</Original>
                 <English>Random direction</English>
@@ -873,6 +881,30 @@
             <Key ID="STR_iedd_ied_Training_PlasticCanister_DisplayName">
                 <Original>Training IED Plastic Canister</Original>
                 <English>Training IED Plastic Canister</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Tooltip">
+                <Original>Set IED trigger type.</Original>
+                <English>Set IED trigger type.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Type">
+                <Original>Trigger type</Original>
+                <English>Trigger type</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Type_1">
+                <Original>Internal Proximity</Original>
+                <English>Internal Proximity</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Type_2">
+                <Original>External</Original>
+                <English>External</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Type_3">
+                <Original>Internal + External</Original>
+                <English>Internal + External</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Trigger_Type_Tooltip">
+                <Original>Set IED trigger type.</Original>
+                <English>Set IED trigger type.</English>
             </Key>
             <Key ID="STR_iedd_ied_VarX">
                 <Original>Chance of variation X</Original>

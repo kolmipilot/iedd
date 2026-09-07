@@ -5,17 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=5;
+	toggles=1;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
-		nextID=4;
+		nextID=31;
 	};
 	class Camera
 	{
-		pos[]={1913.8051,53.913181,5762.4653};
-		dir[]={-0.63605744,-0.74849755,-0.18761359};
-		up[]={-0.71791911,0.66313916,-0.21175961};
-		aside[]={-0.28291476,6.9077942e-008,0.95915174};
+		pos[]={1868.953,5.8289194,5763.7368};
+		dir[]={-0.59770125,-0.14631495,0.78828251};
+		up[]={-0.088406727,0.98923236,0.11659566};
+		aside[]={0.79685515,7.7110599e-08,0.60420448};
 	};
 };
 binarizationWanted=0;
@@ -23,14 +27,38 @@ sourceName="0000_iedd_notebook_test";
 addons[]=
 {
 	"A3_Characters_F",
+	"A3_Weapons_F_Rifles_MX",
+	"A3_Weapons_F_Acc",
+	"ace_realisticnames",
+	"ace_scopes",
+	"ace_laserpointer",
+	"A3_Weapons_F",
+	"ace_smallarms",
+	"ace_ballistics",
+	"A3_Weapons_F_Pistols_P07",
+	"ace_nightvision",
+	"ace_hearing",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"A3_Characters_F_Mark",
+	"A3_Weapons_F_Explosives",
 	"ace_explosives",
-	"A3_Modules_F_Curator_Curator"
+	"ace_attach",
+	"ace_chemlights",
+	"ace_arsenal",
+	"A3_Weapons_F_Orange",
+	"A3_Modules_F_Curator_Curator",
+	"A3_Structures_F_Exp_Walls_Wooden",
+	"iedd_ied",
+	"A3_Weapons_F_Enoch",
+	"A3_Structures_F_Enoch_Walls_Wooden",
+	"iedd_triggers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=21;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -40,19 +68,151 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item3
+		{
+			className="ace_laserpointer";
+			name="ACE3 - Laser Pointer";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item4
+		{
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item5
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item6
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item7
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item8
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item9
+		{
+			className="A3_Characters_F_Mark";
+			name="Arma 3 Marksmen - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
+		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item2
+		class Item11
+		{
+			className="ace_attach";
+			name="ACE3 - Attach";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item12
+		{
+			className="ace_chemlights";
+			name="ACE3 - Chemlights";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item13
+		{
+			className="ace_arsenal";
+			name="ACE3 - Arsenal";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item14
+		{
+			className="A3_Weapons_F_Orange";
+			name="Arma 3 Orange - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item16
+		{
+			className="A3_Structures_F_Exp";
+			name="Arma 3 Apex - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
+		{
+			className="iedd_ied";
+			name="IEDD Notebook - IEDs";
+			author="prisoner";
+			url="https://community.bistudio.com/wiki";
+		};
+		class Item18
+		{
+			className="A3_Weapons_F_Enoch";
+			name="Arma 3 Contact Platform - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item19
+		{
+			className="A3_Structures_F_Enoch";
+			name="Arma 3 Contact Platform - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item20
+		{
+			className="iedd_triggers";
+			name="IEDD Notebook - Triggers";
+			author="prisoner";
+			url="https://community.bistudio.com/wiki";
+		};
 	};
+};
+dlcs[]=
+{
+	"Mark",
+	"Expansion",
+	"Enoch"
 };
 randomSeed=3982459;
 class ScenarioData
@@ -121,7 +281,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=9;
 		class Item0
 		{
 			dataType="Group";
@@ -141,17 +301,169 @@ class Mission
 					class Attributes
 					{
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="arifle_MXC_Holo_pointer_F";
+								optics="optic_Holosight";
+								flashlight="acc_pointer_IR";
+								firemode="arifle_MXC_Holo_pointer_F:Single";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_PlateCarrierGL_rgr";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=7;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=3;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="16Rnd_9x21_Mag";
+										count=2;
+										ammoLeft=17;
+									};
+									class Item2
+									{
+										name="APERSMine_Range_Mag";
+										count=3;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="HandGrenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item5
+									{
+										name="SmokeShellGreen";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item6
+									{
+										name="Chemlight_green";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_Kitbag_rgr_Exp";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="APERSBoundingMine_Range_Mag";
+										count=3;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="ClaymoreDirectionalMine_Remote_Mag";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="SLAMDirectionalMine_Wire_Mag";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="DemoCharge_Remote_Mag";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="ToolKit";
+										count=1;
+									};
+									class Item1
+									{
+										name="MineDetector";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							hmd="NVGoggles";
+							headgear="H_HelmetSpecB";
+						};
 					};
 					id=1;
 					type="B_soldier_exp_F";
-					atlOffset=4.7683716e-007;
+					atlOffset=4.7683716e-07;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=0;
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
 		class Item1
 		{
@@ -217,6 +529,157 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1868.782,6.0057454,5796.772};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="p2";
+			};
+			id=7;
+			type="Land_WoodenWall_02_s_pole_F";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1874.401,6.0188818,5797.1362};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="p1";
+			};
+			id=8;
+			type="Land_WoodenWall_02_s_pole_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1888.577,5.8430128,5796.0977};
+				angles[]={0.0049916417,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ied1";
+			};
+			id=9;
+			type="iedd_ied_Training_CanisterFuel";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_ied_bury";
+					expression="if (is3DEN) then {                [_this, _value] call iedd_ied_fnc_buryIED3DEN;            } else {                _this setVariable ['iedd_ied_bury', [parseNumber(_value toFixed 2), vectorDir _this, vectorUp _this]];            }";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1874.7775,6.2053342,5797.1372};
+				angles[]={0.0024897563,0,0.0024897563};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=18;
+			type="Item_ChemicalDetector_01_watch_F";
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1880.0731,5.4405503,5816.2988};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=21;
+			type="Land_WoodenWall_03_s_pole_F";
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1868.9291,5.567337,5764.1416};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init=";private _ieddTripWireMarker = 'IEDD_TRIPWIRE_END_POSITION'; [this, [1855.32,5767.14,5.47703]] call iedd_triggers_fnc_SpawnTripWireWire;";
+			};
+			id=29;
+			type="iedd_triggers_TripWirePole";
+			atlOffset=-0.00018119812;
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1855.3192,5.477026,5767.1406};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=30;
+			type="iedd_triggers_TripWirePoleEnd";
+			atlOffset=-0.00012016296;
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=29;
+				item1=30;
+				class CustomData
+				{
+					type="Sync";
+				};
 			};
 		};
 	};

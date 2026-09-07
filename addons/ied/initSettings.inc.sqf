@@ -308,6 +308,22 @@
 
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(defaultTriggerType),
+    "LIST",
+    [LSTRING(DefaultTriggerType), LSTRING(DefaultTriggerType_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0,1,2],
+        [LSTRING(Trigger_Type_1), LSTRING(Trigger_Type_2), LSTRING(Trigger_Type_3)],
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
 /*Variation X Spawn prob % if random selected*/
 [
     QGVAR(defaultVarX),

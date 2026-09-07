@@ -18,7 +18,8 @@
 params ["_bombObj"];
 TRACE_1("fnc_bomb",_this);
 
-if (!(_bombObj getVariable [QEGVAR(ied,bomb),false])) exitWith {};
+private _isBomb = _bombObj getVariable [QEGVAR(ied,bomb), false];
+if (!_isBomb) exitWith {};
 _bombObj setVariable [QGVAR(bomb),false,true];
 private _isTraining = _bombObj getVariable [QGVAR(training), false];
 if (_isTraining) then {

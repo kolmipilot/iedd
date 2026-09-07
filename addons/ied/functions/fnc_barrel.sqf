@@ -23,6 +23,8 @@ if (!isServer) exitWith {};
 [{
     params ["_bombObj"];
     private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariation)];
+    private _trigerType = _bombObj getVariable [QGVAR(trigerType), GVAR(defaultTriggerType)];
+    _bombObj setVariable [QGVAR(trigerType), _trigerType, true];
     private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
     private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];

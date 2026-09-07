@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="IEDD">
+    <Package name="triggers">
+        <Container name="IEDD Triggers Others">
+            <Key ID="STR_iedd_triggers_CutWire">
+                <Original>Wire Disarmed</Original>
+                <English>Wire Disarmed</English>
+            </Key>
+            <Key ID="STR_iedd_triggers_TripWirePoleEnd_DisplayName">
+                <Original>Trip Wire Pole End</Original>
+                <English>Trip Wire Pole End</English>
+            </Key>
+            <Key ID="STR_iedd_triggers_TripWirePole_DisplayName">
+                <Original>Trip Wire Pole</Original>
+                <English>Trip Wire Pole</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

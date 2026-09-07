@@ -15,6 +15,10 @@ class CfgEditorSubcategories
     {
         displayName = CSTRING(Category_IEDs); // Name visible in the list
     };
+    class IEDD_TRIGGERS // Category class, you point to it in editorSubcategory property
+    {
+        displayName = CSTRING(Category_Triggers); // Name visible in the list
+    };
     class IEDD_TRAINING_IEDS
     {
         displayName = CSTRING(Category_Training_IEDs);

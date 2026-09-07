@@ -69,6 +69,29 @@ class GVAR(ied_SubCategory) {\
                 };\
             };\
         };\
+        class GVAR(trigerType) {\
+            displayName = CSTRING(Trigger_Type);\
+            tooltip = CSTRING(Trigger_Type_Tooltip);\
+            property = QGVAR(trigerType);\
+            expression = "_this setVariable ['%s',_value];";\
+            defaultValue = QGVAR(defaultTriggerType);\
+            control = "Combo";\
+            typeName = "NUMBER";\
+            class Values {\
+                class 1	{\
+                    name = CSTRING(Trigger_Type_1);\
+                    value = 0;\
+                };\
+                class 2	{\
+                    name = CSTRING(Trigger_Type_2);\
+                    value = 1;\
+                };\
+                class 3	{\
+                    name = CSTRING(Trigger_Type_3);\
+                    value = 2;\
+                };\
+            };\
+        };\
         class GVAR(varX) {\
             displayName = CSTRING(VarX);\
             tooltip = CSTRING(VarX_Tooltip);\

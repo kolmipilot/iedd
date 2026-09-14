@@ -23,18 +23,21 @@ params ["_pole1"];
     if (isNull _pole1) exitWith {};
 
     private _connectionData = _pole1 getVariable ["IEDD_Links", []];
-    if !(_connectionData isEqualType []) exitWith {};
+    if (_connectionData isEqualType "") then {
+        _connectionData = parseSimpleArray _connectionData;
+    };
 
-    private _pole2Position = [];
+    private _pole2 = objNull;
     private _iedData = [];
+    private _boxes = [];
     {
         if !(_x isEqualType []) exitWith {};
 
         private _connectionType = _x param [0, ""];
-        if (_connectionType == "pole") then {
+        if (_connectionType == "pole" && isNull _pole2) then {
             private _position = _x param [1, []];
             if (_position isEqualType [] && {count _position == 3}) then {
-                _pole2Position = _position;
+                _pole2 = nearestObject [_position, QGVAR(TripWirePoleEnd)]
             };
         };
 
@@ -45,17 +48,22 @@ params ["_pole1"];
                 _iedData pushBack [_className, _position];
             };
         };
+
+        if (_connectionType == "box") then {
+            private _position = _x param [1, []];
+            if (_position isEqualType [] && {count _position == 3}) then {
+                _boxes pushBack nearestObject [_position, QGVAR(RelayBox)];
+            };
+        };
     } forEach _connectionData;
 
-    if !(_pole2Position isEqualType [] && {count _pole2Position == 3}) exitWith {};
-    private _pole2 = nearestObjects [_pole2Position, [QGVAR(TripWirePoleEnd)], 2] param [0, objNull];
     if (isNull _pole2) exitWith {};
     private _ieds = [];
     {
         if (_x isEqualType [] && {count _x == 2}) then {
             _x params ["_className", "_position"];
             if (_className isEqualType "" && {_className != ""} && {_position isEqualType []} && {count _position == 3}) then {
-                private _ied = nearestObjects [_position, [_className], 2] param [0, objNull];
+                private _ied = nearestObject [_position, _className];
                 if (!isNull _ied) then {
                     _ieds pushBackUnique _ied;
                 };
@@ -63,7 +71,7 @@ params ["_pole1"];
         };
     } forEach _iedData;
 
-    TRACE_3("SpawnTripWireHandle",_pole1,_pole2,_ieds);
+    TRACE_4("SpawnTripWireHandle",_pole1,_pole2,_ieds,_boxes);
 
     if (isNull _pole1 || isNull _pole2) exitWith {};
 
@@ -96,12 +104,13 @@ params ["_pole1"];
         _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
         _trg setTriggerStatements [
             "this",
-            "private _tripTrigger = thisTrigger; private _tripIEDs = _tripTrigger getVariable ['IEDD_TriggerIEDs', []]; private _tripPole = _tripTrigger getVariable ['IEDD_TriggerPole', objNull]; if (!isNull _tripPole) then {_tripPole setVariable ['IEDD_TriggerActivated', true, true]}; {[_x] call iedd_ied_fnc_bomb;} forEach _tripIEDs; deleteVehicle _tripTrigger;",
+            "private _tripTrigger = thisTrigger; private _tripIEDs = _tripTrigger getVariable ['IEDD_TriggerIEDs', []]; private _triggerBoxes = _tripTrigger getVariable ['IEDD_TriggerBoxes', []]; private _tripPole = _tripTrigger getVariable ['IEDD_TriggerPole', objNull]; if (!isNull _tripPole) then {_tripPole setVariable ['IEDD_TriggerActivated', true, true]}; {[_x, objNull, 10] call iedd_triggers_fnc_TriggerRelayBox;} forEach _triggerBoxes; {[_x] call iedd_ied_fnc_bomb;} forEach _tripIEDs; deleteVehicle _tripTrigger;",
             ""
         ];
         _trg setTriggerInterval 0.1;
         _trg setVariable ["IEDD_TriggerIEDs", _ieds, true];
         _trg setVariable ["IEDD_TriggerPole", _pole1, true];
+        _trg setVariable ["IEDD_TriggerBoxes", _boxes, true];
     };
 
     if (isServer) then {

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [_pole] call iedd_triggers_fnc_SpawnTripWireIgniter;
+ * [_pole] call iedd_triggers_fnc_SpawnTripWireInit;
  *
  * Public: No
  */
@@ -28,11 +28,13 @@ _obj setVariable ["IEDD_3denIgniter", _igniter];
 
 _obj addEventHandler ["ConnectionChanged3DEN", {
     params ["_object"];
+    TRACE_1("ConnectionChanged3DEN",_object);
     [_object] call FUNC(UpdateTripWireConnection);
 }];
 
 _obj addEventHandler ["Dragged3DEN", {
     params ["_object"];
+    TRACE_1("Dragged3DEN",_object);
     private _igniter = _object getVariable ["IEDD_3denIgniter", objNull];
     if (!isNull _igniter) then {
         _igniter setPos [getPos _object select 0, getPos _object select 1, (getPos _object select 2) + 0.1];
@@ -41,6 +43,7 @@ _obj addEventHandler ["Dragged3DEN", {
 
 _obj addEventHandler ["UnregisteredFromWorld3DEN", {
     params ["_object"];
+    TRACE_1("UnregisteredFromWorld3DEN",_object);
     private _igniter = _object getVariable ["IEDD_3denIgniter", objNull];
     if (!isNull _igniter) then {
         deleteVehicle _igniter;
@@ -53,6 +56,7 @@ _obj addEventHandler ["UnregisteredFromWorld3DEN", {
 
 _obj addEventHandler ["RegisteredToWorld3DEN", {
     params ["_object"];
+    TRACE_1("RegisteredToWorld3DEN",_object);
     [_object] call FUNC(UpdateTripWireConnection);
 }];
 

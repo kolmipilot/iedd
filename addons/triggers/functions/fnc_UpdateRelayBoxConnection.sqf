@@ -17,31 +17,26 @@
 params ["_object"];
 
 if (!is3DEN || {isNull _object}) exitWith {};
-TRACE_1("updateTripWireIgniter",_object);
-private _pole2 = objNull;
+TRACE_1("updateRelayBoxConnection",_object);
 private _connectionData = [];
 {
     _x params ["_connectionType", "_connectedObject"];
     if (_connectionType != "Sync" || {isNull _connectedObject}) then {
         continue;
     };
-
-    if (typeOf _connectedObject == QGVAR(TripWirePoleEnd)) then {
-        _pole2 = _connectedObject;
-        _connectionData pushBack ["pole", getPos _connectedObject];
+    if (typeOf _connectedObject == QGVAR(RelayBox)) then {
+        _connectionData pushBack ["box", getPos _connectedObject];
     };
     if ((typeOf _connectedObject) in IEDD_CLASSES || (typeOf _connectedObject) in IEDD_TRAINING_CLASSES) then {
         _connectionData pushBack ["ied", typeOf _connectedObject, getPos _connectedObject];
     };
-    if (typeOf _connectedObject == QGVAR(RelayBox)) then {
-        _connectionData pushBack ["box", getPos _connectedObject];
-    };
 } forEach get3DENConnections _object;
 
-TRACE_1("updateTripWireConnections 3den connetctions",get3DENConnections _object);
-TRACE_1("updateTripWireConnections atrteibute connection",_connectionData);
-_object set3DENAttribute ["iedd_triggers_connections", str _connectionData];
+TRACE_1("updateRelayBoxConnection 3den connetctions",get3DENConnections _object);
+TRACE_1("updateRelayBoxConnection attribute connection",_connectionData);
+_object set3DENAttribute ["iedd_triggers_relayconnections", str _connectionData];
 
+/*
 private _oldWire = _object getVariable ["IEDD_3denWire", -1];
 if (_oldWire >= 0) then {
     removeMissionEventHandler ["Draw3D", _oldWire];
@@ -65,3 +60,4 @@ private _wire = addMissionEventHandler ["Draw3D", {
 }, [_object, _pole2]];
 
 _object setVariable ["IEDD_3denWire", _wire];
+*/

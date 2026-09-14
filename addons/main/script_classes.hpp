@@ -30,6 +30,16 @@
     "iedd_ied_Bucket_Fake"\
 ]
 
+#define IEDD_TRAINING_CLASSES [\
+    "iedd_ied_Training_CanisterPlastic",\
+    "iedd_ied_Training_CanisterFuel",\
+    "iedd_ied_Training_Cardboard",\
+    "iedd_ied_Training_Cinder",\
+    "iedd_ied_Training_Metal",\
+    "iedd_ied_Training_Barrel",\
+    "iedd_ied_Training_Bucket"\
+]
+
 #define IEDD_DECALS [\
     "Land_Decal_RoadEdge_Dirt_03_F",\
     "Land_Garbage_square3_F",\

@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=32;
+		nextID=38;
 	};
 	class Camera
 	{
-		pos[]={1878.7361,8.1443329,5795.269};
-		dir[]={-0.34348527,-0.49490017,-0.7982285};
-		up[]={-0.1956158,0.86894035,-0.4545936};
-		aside[]={-0.91859668,-6.9680391e-07,0.39527878};
+		pos[]={1874.9529,8.6519718,5779.3657};
+		dir[]={0.078915969,-0.48667383,0.87001747};
+		up[]={0.043963764,0.87358218,0.4846864};
+		aside[]={0.99591422,-1.747685e-08,-0.090335555};
 	};
 };
 binarizationWanted=0;
@@ -36,6 +36,7 @@ addons[]=
 	"ace_smallarms",
 	"ace_ballistics",
 	"A3_Weapons_F_Pistols_P07",
+	"A3_Drones_F_Weapons_F_Gamma_Items",
 	"ace_nightvision",
 	"ace_hearing",
 	"A3_Weapons_F_Items",
@@ -52,13 +53,15 @@ addons[]=
 	"iedd_ied",
 	"A3_Weapons_F_Enoch",
 	"A3_Structures_F_Enoch_Walls_Wooden",
-	"iedd_triggers"
+	"iedd_triggers",
+	"A3_Characters_F_Orange",
+	"A3_Air_F_Orange_UAV_06"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=24;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -103,108 +106,129 @@ class AddonsMetaData
 		};
 		class Item6
 		{
+			className="A3_Drones_F";
+			name="Arma 3 Beta - Drones";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item7
+		class Item8
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item8
+		class Item9
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item10
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item11
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item12
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item13
 		{
 			className="ace_chemlights";
 			name="ACE3 - Chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item14
 		{
 			className="ace_arsenal";
 			name="ACE3 - Arsenal";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item18
 		{
 			className="iedd_ied";
 			name="IEDD Notebook - IEDs";
 			author="prisoner";
 			url="https://community.bistudio.com/wiki";
 		};
-		class Item18
+		class Item19
 		{
 			className="A3_Weapons_F_Enoch";
 			name="Arma 3 Contact Platform - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item20
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item21
 		{
 			className="iedd_triggers";
 			name="IEDD Notebook - Triggers";
 			author="prisoner";
 			url="https://community.bistudio.com/wiki";
+		};
+		class Item22
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item23
+		{
+			className="A3_Air_F_Orange";
+			name="Arma 3 Orange - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -282,7 +306,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=15;
 		class Item0
 		{
 			dataType="Group";
@@ -451,6 +475,7 @@ class Mission
 							compass="ItemCompass";
 							watch="ItemWatch";
 							radio="ItemRadio";
+							gps="B_UavTerminal";
 							hmd="NVGoggles";
 							headgear="H_HelmetSpecB";
 						};
@@ -643,6 +668,23 @@ class Mission
 			};
 			id=29;
 			type="iedd_triggers_TripWirePole";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_triggers_connections";
+					expression="_this setVariable ['IEDD_Links', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""pole"",[1855.29,5767.16,-0.00024128]],[""box"",[1873.86,5781.25,3.8147e-06]]]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item8
 		{
@@ -745,21 +787,248 @@ class Mission
 				nAttributes=5;
 			};
 		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1873.861,5.6841216,5781.25};
+				angles[]={0.0049914722,0,0.0049914722};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=32;
+			type="iedd_triggers_RelayBox";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_triggers_relayconnections";
+					expression="_this setVariable ['IEDD_Links', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""box"",[1875.25,5787.03,5.72205e-06]],[""box"",[1872.53,5784.14,6.19888e-06]]]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1871.5559,5.5867891,5747.564};
+						angles[]={6.2781854,0,0.0049998914};
+					};
+					side="Civilian";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=35;
+					type="C_IDAP_UAV_AI_antimine_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=35;
+						item1=34;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=33;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1871.5547,5.8351607,5747.5127};
+				angles[]={6.2781854,0,0.0049998914};
+			};
+			side="Civilian";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=34;
+			type="C_IDAP_UAV_06_antimine_F";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1875.2457,5.6621361,5787.0322};
+				angles[]={0.0049914722,0,0.0049914722};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=36;
+			type="iedd_triggers_RelayBox";
+			atlOffset=1.4305115e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_triggers_relayconnections";
+					expression="_this setVariable ['IEDD_Links', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""box"",[1872.53,5784.14,6.19888e-06]],[""box"",[1873.86,5781.25,3.8147e-06]],[""ied"",""iedd_ied_Cinder"",[1876.08,5792.04,7.15256e-06]],[""ied"",""iedd_ied_Training_CanisterFuel"",[1888.58,5796.1,7.15256e-06]]]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1872.5345,5.6630335,5784.1416};
+				angles[]={0.0049914722,0,0.0049914722};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=37;
+			type="iedd_triggers_RelayBox";
+			atlOffset=1.9073486e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="iedd_triggers_relayconnections";
+					expression="_this setVariable ['IEDD_Links', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""box"",[1875.25,5787.03,5.72205e-06]],[""box"",[1873.86,5781.25,3.8147e-06]]]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=1;
+			nextID=7;
 		};
 		class Links
 		{
-			items=1;
+			items=7;
 			class Item0
 			{
 				linkID=0;
+				item0=37;
+				item1=36;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
 				item0=29;
 				item1=30;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=29;
+				item1=32;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item3
+			{
+				linkID=3;
+				item0=32;
+				item1=36;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item4
+			{
+				linkID=4;
+				item0=37;
+				item1=32;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item5
+			{
+				linkID=5;
+				item0=36;
+				item1=31;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item6
+			{
+				linkID=6;
+				item0=9;
+				item1=36;
 				class CustomData
 				{
 					type="Sync";

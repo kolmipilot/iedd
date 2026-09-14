@@ -14,6 +14,10 @@
                 <Original>Trip Wire Pole</Original>
                 <English>Trip Wire Pole</English>
             </Key>
+            <Key ID="STR_iedd_triggers_RelayBox_DisplayName">
+                <Original>Relay Box</Original>
+                <English>Relay Box</English>
+            </Key>
         </Container>
     </Package>
 </Project>
